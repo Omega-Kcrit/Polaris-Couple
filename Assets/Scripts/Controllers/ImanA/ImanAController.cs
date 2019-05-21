@@ -38,10 +38,16 @@ public class ImanAController : MonoBehaviour
     public float maxVelocityInRepulsion = 1f;
     public float maxVelocityInImpulse = 10f;
     public bool switchMaxRepulsion = false;
+    public bool inNormalRepulsion = false;
+    public float maxNoramlVelocityInRepulsion = 1f;
+    public float normalRepulsionForce = 1f;
+    public float normalForceGlboal = 1f;
 
     //Charm Valores   
     public float speedMaxInCharm = 1;
     public float forceCharm = 20f;
+    private bool charmActvie = false;
+
 
     //Fede: Cooldown para la habilidad de atraer
     public bool coolingdownSkill1 = false;
@@ -53,15 +59,29 @@ public class ImanAController : MonoBehaviour
     public GameObject SkillIndicator;
     public float ImpulseSkill2 = 10;
 
+
+
     //Pendulo 
     public bool inPendulo = false;
     public float massInPendulo = 1;
+    public float speedMaxPendulo;
 
     //Animaciones
     public Animator animator;
     public GameObject Prefab_Bolagrande;
     public Vector3 PosPropulsio;
     public float time;
+    public bool OnAir = false;
+    
+    //Platf Mov
+    private Transform transformPlayer;
+
+    public bool imDeath = false;
+
+   
+
+    //Luz
+    public GameObject Luz;
 
     //public Vector2 positionImanBInImpulse;
     //public Vector3 distanceLimitObjectB;
@@ -93,9 +113,15 @@ public class ImanAController : MonoBehaviour
 
         distanceImanB = this.transform.position - imanBtransform.position;
         animator.SetFloat("Speed", Mathf.Abs(rb2D.velocity.x));
+        animator.SetFloat("SpeedUp", rb2D.velocity.y);
+        animator.SetBool("OnAir", this.OnAir);
         CollisionEnable(CollidersEnable);
 
-        //print(currentState);
+
+        Luz.gameObject.SetActive(InControllA);
+        
+
+
     }
     public void SiguienteBola()
     {
@@ -157,8 +183,51 @@ public class ImanAController : MonoBehaviour
     {
         if (collision.gameObject.tag == "ImanBRepulsionArea")
         {
-            this.rb2D.AddForce(distanceImanB.normalized * repulsionForce, ForceMode2D.Force);
-            inRepulsion = true;
+            //if (collision.gameObject.GetComponentInParent<Transform>().transform.position.y + (collision.gameObject.GetComponentInParent<CapsuleCollider2D>().size.y / 2) < this.transform.position.y - (this.GetComponent<CapsuleCollider2D>().size.y / 2))
+
+            if (charmActvie)
+            {
+                print(this.currentState);
+                this.rb2D.AddForce(distanceImanB.normalized * repulsionForce * normalForceGlboal, ForceMode2D.Force);
+                inRepulsion = true;
+                inNormalRepulsion = false;
+            }
+            else if (this.transform.position.y > collision.GetComponent<Transform>().position.y)
+            {
+                print(this.currentState);
+                this.rb2D.AddForce(distanceImanB.normalized * repulsionForce * normalForceGlboal, ForceMode2D.Force);
+                inRepulsion = true;
+                inNormalRepulsion = false;
+            }
+
+            //El bueno
+            //if ((this.transform.position.y > collision.GetComponent<Transform>().position.y) || (charmActvie))
+            //{
+            //    print(this.currentState);
+            //    this.rb2D.AddForce(distanceImanB.normalized * repulsionForce * normalForceGlboal, ForceMode2D.Force);
+            //    inRepulsion = true;
+            //    inNormalRepulsion = false;
+            //}
+            else
+            {
+                repulsionForce = normalRepulsionForce;
+                this.rb2D.AddForce(distanceImanB.normalized * repulsionForce * normalForceGlboal, ForceMode2D.Force);
+                inRepulsion = false;
+                inNormalRepulsion = true;
+            }
+
+            //    this.rb2D.AddForce(distanceImanB.normalized * repulsionForce, ForceMode2D.Force);
+            //inRepulsion = true;
+        }
+        if (collision.gameObject.tag == "PlatfMov")
+        {
+            if (this.transform.position.y > collision.gameObject.GetComponent<Transform>().position.y + (collision.gameObject.GetComponent<BoxCollider2D>().size.y/2))
+            {
+                transformPlayer = collision.transform;
+            this.transform.parent = transformPlayer.transform; 
+            }
+            
+            //this.transform.parent.position = this.transform.position;
         }
         
         //if (collision.gameObject.tag == "ImpulseArea")
@@ -181,26 +250,40 @@ public class ImanAController : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ImanBRepulsionArea")
-        {
-            if (switchMaxRepulsion)
-            {
-                velocityInRepulsion = maxVelocityInImpulse;
-                repulsionForce = repulsionForceInCharm;
-                float clampedSpeedX = Mathf.Clamp(this.rb2D.velocity.x, -velocityInRepulsion, velocityInRepulsion);
-                float clampedSpeedY = Mathf.Clamp(this.rb2D.velocity.y, -velocityInRepulsion, velocityInRepulsion);
-                this.rb2D.velocity = new Vector2(clampedSpeedX, clampedSpeedY);
-            }
-            else
-            {
-                velocityInRepulsion = maxVelocityInRepulsion;
-                repulsionForce = repulsionForceStart;
-                float clampedSpeedX = Mathf.Clamp(this.rb2D.velocity.x, -velocityInRepulsion, velocityInRepulsion);
-                float clampedSpeedY = Mathf.Clamp(this.rb2D.velocity.y, -velocityInRepulsion, velocityInRepulsion);
-                this.rb2D.velocity = new Vector2(clampedSpeedX, clampedSpeedY);
-            }
+        {          
+                if (inNormalRepulsion)
+                {
+                    velocityInRepulsion = maxNoramlVelocityInRepulsion;
+                    //repulsionForce = repulsionForceInCharm;
+                    float clampedSpeedX = Mathf.Clamp(this.rb2D.velocity.x, -velocityInRepulsion* normalForceGlboal, velocityInRepulsion * normalForceGlboal);
+                    float clampedSpeedY = Mathf.Clamp(this.rb2D.velocity.y, -velocityInRepulsion * normalForceGlboal, velocityInRepulsion* normalForceGlboal);
+                    this.rb2D.velocity = new Vector2(clampedSpeedX, clampedSpeedY);
+                    inNormalRepulsion = false;
+                }
+                else if (switchMaxRepulsion)
+                {
+                    velocityInRepulsion = maxVelocityInImpulse;
+                    repulsionForce = repulsionForceInCharm;
+                    float clampedSpeedX = Mathf.Clamp(this.rb2D.velocity.x, -velocityInRepulsion * normalForceGlboal, velocityInRepulsion * normalForceGlboal);
+                    float clampedSpeedY = Mathf.Clamp(this.rb2D.velocity.y, -velocityInRepulsion * normalForceGlboal, velocityInRepulsion * normalForceGlboal);
+                    this.rb2D.velocity = new Vector2(clampedSpeedX, clampedSpeedY);
+                }
+                else
+                {
+                    velocityInRepulsion = maxVelocityInRepulsion;
+                    repulsionForce = repulsionForceStart;
+                    float clampedSpeedX = Mathf.Clamp(this.rb2D.velocity.x, -velocityInRepulsion * normalForceGlboal, velocityInRepulsion * normalForceGlboal);
+                    float clampedSpeedY = Mathf.Clamp(this.rb2D.velocity.y, -velocityInRepulsion * normalForceGlboal, velocityInRepulsion * normalForceGlboal);
+                    this.rb2D.velocity = new Vector2(clampedSpeedX, clampedSpeedY);
+                }
+            
             inRepulsion = false;
             velocityInRepulsion = maxVelocityInRepulsion;
             repulsionForce = repulsionForceStart;
+        }
+        if (collision.gameObject.tag == "PlatfMov")
+        {
+            this.transform.parent = null;
         }
         //if (collision.gameObject.tag == "ImpulseArea")
         //{
@@ -218,14 +301,15 @@ public class ImanAController : MonoBehaviour
     {
         if (Input.GetKey("e") || InputManager.XButtonGetKey()    /*Input.GetButton("Fire1")*/)
         {
+            charmActvie = true;
             switchMaxRepulsion = true;
             if (!inRepulsion)
             {
                 imanBrb2d.gravityScale = 0;
-                imanBrb2d.AddForce(distanceImanB.normalized * forceCharm, ForceMode2D.Force);
+                imanBrb2d.AddForce(distanceImanB.normalized * forceCharm , ForceMode2D.Force);
 
-                float clampedSpeedX = Mathf.Clamp(imanBrb2d.velocity.x, -speedMaxInCharm, speedMaxInCharm);
-                float clampedSpeedY = Mathf.Clamp(imanBrb2d.velocity.y, -speedMaxInCharm, speedMaxInCharm);
+                float clampedSpeedX = Mathf.Clamp(imanBrb2d.velocity.x, -speedMaxInCharm * normalForceGlboal, speedMaxInCharm * normalForceGlboal);
+                float clampedSpeedY = Mathf.Clamp(imanBrb2d.velocity.y, -speedMaxInCharm * normalForceGlboal, speedMaxInCharm * normalForceGlboal);
                 imanBrb2d.velocity = new Vector2(clampedSpeedX, clampedSpeedY);                
             }
             else
@@ -242,8 +326,11 @@ public class ImanAController : MonoBehaviour
         }
         if (Input.GetKeyUp("e") || Input.GetButtonUp("X_Button"))
         {
-            coolingdownSkill1 = true;
-            switchMaxRepulsion = false;            
+            //coolingdownSkill1 = true;
+            switchMaxRepulsion = false;
+            imanBrb2d.gravityScale = 2;
+            charmActvie = false;
+
         }
     }
 

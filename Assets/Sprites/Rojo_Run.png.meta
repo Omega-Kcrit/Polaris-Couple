@@ -1,0 +1,863 @@
+fileFormatVersion: 2
+guid: 755f01044d1ee28409de7ac957c70ad4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Rojo_Run_7
+    21300002: Rojo_Run_6
+    21300004: Rojo_Run_5
+    21300006: Rojo_Run_4
+    21300008: Rojo_Run_3
+    21300010: Rojo_Run_2
+    21300012: Rojo_Run_1
+    21300014: Rojo_Run_14
+    21300016: Rojo_Run_13
+    21300018: Rojo_Run_12
+    21300020: Rojo_Run_11
+    21300022: Rojo_Run_10
+    21300024: Rojo_Run_9
+    21300026: Rojo_Run_8
+    21300028: Rojo_Run_21
+    21300030: Rojo_Run_57
+    21300032: Rojo_Run_20
+    21300034: Rojo_Run_19
+    21300036: Rojo_Run_18
+    21300038: Rojo_Run_17
+    21300040: Rojo_Run_16
+    21300042: Rojo_Run_15
+    21300044: Rojo_Run_64
+    21300046: Rojo_Run_65
+    21300048: Rojo_Run_66
+    21300050: Rojo_Run_67
+    21300052: Rojo_Run_68
+    21300054: Rojo_Run_69
+    21300056: Rojo_Run_70
+    21300058: Rojo_Run_71
+    21300060: Rojo_Run_72
+    21300062: Rojo_Run_73
+    21300064: Rojo_Run_74
+    21300066: Rojo_Run_75
+    21300068: Rojo_Run_76
+    21300070: Rojo_Run_77
+    21300072: Rojo_Run_78
+    21300074: Rojo_Run_79
+    21300076: Rojo_Run_80
+    21300078: Rojo_Run_81
+    21300080: Rojo_Run_82
+    21300082: Rojo_Run_83
+    21300084: Rojo_Run_84
+    21300086: Rojo_Run_85
+    21300088: Rojo_Run_86
+    21300090: Rojo_Run_28
+    21300092: Rojo_Run_88
+    21300094: Rojo_Run_27
+    21300096: Rojo_Run_90
+    21300098: Rojo_Run_26
+    21300100: Rojo_Run_92
+    21300102: Rojo_Run_25
+    21300104: Rojo_Run_24
+    21300106: Rojo_Run_23
+    21300108: Rojo_Run_22
+    21300110: Rojo_Run_97
+    21300112: Rojo_Run_98
+    21300114: Rojo_Run_99
+    21300116: Rojo_Run_100
+    21300118: Rojo_Run_101
+    21300120: Rojo_Run_102
+    21300122: Rojo_Run_103
+    21300124: Rojo_Run_104
+    21300126: Rojo_Run_105
+    21300128: Rojo_Run_106
+    21300130: Rojo_Run_107
+    21300132: Rojo_Run_108
+    21300134: Rojo_Run_109
+    21300136: Rojo_Run_110
+    21300138: Rojo_Run_111
+    21300140: Rojo_Run_112
+    21300142: Rojo_Run_113
+    21300144: Rojo_Run_114
+    21300146: Rojo_Run_115
+    21300148: Rojo_Run_116
+    21300150: Rojo_Run_30
+    21300152: Rojo_Run_29
+    21300154: Rojo_Run_119
+    21300156: Rojo_Run_33
+    21300158: Rojo_Run_121
+    21300160: Rojo_Run_32
+    21300162: Rojo_Run_123
+    21300164: Rojo_Run_31
+    21300166: Rojo_Run_125
+    21300168: Rojo_Run_126
+    21300170: Rojo_Run_127
+    21300172: Rojo_Run_128
+    21300174: Rojo_Run_129
+    21300176: Rojo_Run_130
+    21300178: Rojo_Run_131
+    21300180: Rojo_Run_132
+    21300182: Rojo_Run_133
+    21300184: Rojo_Run_134
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 450
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rojo_Run_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4296
+        width: 586
+        height: 963
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4de6066b9964648b1ff0ba3ba383f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_6
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 4296
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7284ffdc377617b48b1d523088511cf8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_5
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 4288
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32ca1e6fa4a4c948b7cae77f68e16d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_4
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 4296
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70e01b72d3ae05438d1a1517bb92cfa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_3
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 4296
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babd598c48b7b2e4bb0dd954360cb290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_2
+      rect:
+        serializedVersion: 2
+        x: 3033
+        y: 4297
+        width: 586
+        height: 963
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2882965a5206ecb499f9a503aa8e7c68
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_1
+      rect:
+        serializedVersion: 2
+        x: 3662
+        y: 4298
+        width: 586
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bfc67a7c4bec44bab10243bb7254af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_14
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 3298
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12325887fe8d3fb4bb2a1aa23e356cee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_13
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 3297
+        width: 586
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad70efd16dfda274dab456313a5aa310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_12
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 3305
+        width: 585
+        height: 961
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc4ff8c303beae4f8d8fb58ec5ac675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_11
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 3297
+        width: 586
+        height: 961
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d9894efe127fb42b53aaa7dfa845e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_10
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 3296
+        width: 586
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a27c7ee3e73e744a775197a313ce0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_9
+      rect:
+        serializedVersion: 2
+        x: 3030
+        y: 3296
+        width: 586
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f334ed882c4c54c879b11df769a54a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_8
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 3299
+        width: 586
+        height: 963
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755c04ac2877abd4c9dfee44300eec63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_21
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 2311
+        width: 586
+        height: 965
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36b71fe17a3552489a07bd7da92424c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_20
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 2306
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5572cde0b4c28848a6ca7d7add088f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_19
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 2305
+        width: 586
+        height: 966
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5755709b7b2b0fa47845ea2b8a3c1784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_18
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 2307
+        width: 586
+        height: 967
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0967f5696c3a3cf44babe2d2a35513bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_17
+      rect:
+        serializedVersion: 2
+        x: 2538
+        y: 2309
+        width: 586
+        height: 966
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f265c3eec9e5f4342ad44fded3bd4781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_16
+      rect:
+        serializedVersion: 2
+        x: 3138
+        y: 2303
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b19fa8a2dac2be468a83cf8716e3352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_15
+      rect:
+        serializedVersion: 2
+        x: 3760
+        y: 2303
+        width: 586
+        height: 964
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5663ac6650c554141b17c5a8af9afad8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1303
+        width: 594
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417363f63857a2a4cafe2e2090d9d8a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_27
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1303
+        width: 586
+        height: 963
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c064aef33dbbd1d46a598ea7db2f30e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_26
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 1303
+        width: 586
+        height: 963
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947c235675f7aeb478bead11b60481e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_25
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 1301
+        width: 586
+        height: 965
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eaec2f101cd9b248ab8cb95eb7f22b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_24
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 1301
+        width: 586
+        height: 965
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696f2eb0cb62067458b864203c7216a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_23
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 1301
+        width: 586
+        height: 963
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63b385359e63314784149fb8ded915b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_22
+      rect:
+        serializedVersion: 2
+        x: 3775
+        y: 1301
+        width: 586
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1262e2e3efdc9e3479dcbe671337f12e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_30
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 328
+        width: 591
+        height: 961
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed61315fdd4f6004dba7ca177f662a15
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_29
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 328
+        width: 588
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad92fc2b83dfd84e90325277df251cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_33
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 328
+        width: 590
+        height: 954
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af18364eab28f544af29941c7596e58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_32
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 328
+        width: 590
+        height: 958
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1051e795c0a0d6641adb47d75a548994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rojo_Run_31
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 328
+        width: 593
+        height: 959
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd260369789566940b61b2974f4a1864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b3153f5f6cdb6214b866027b7dc1beab
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

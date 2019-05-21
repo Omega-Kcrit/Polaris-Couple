@@ -6,7 +6,11 @@ public class CheckPointTriggerChecker : MonoBehaviour
 {
     private CheckPointMaster cpm;
     public int val ;
-    
+
+    [SerializeField] private GameObject disparador1;
+    [SerializeField] private GameObject disparador2;
+
+
 
     void Start()
     {
@@ -18,8 +22,32 @@ public class CheckPointTriggerChecker : MonoBehaviour
         if (col.gameObject.tag == "ImanA" || col.gameObject.tag == "ImanB")
         {
             cpm.lastCheckPoint = transform.position;
-            Debug.Log("Checkpointed");
+            if (val == 8)
+            {
+                cpm.special = true;
+                cpm.specialCheckPoint[0] =new Vector2(336.003f, -138.0957f);
+                cpm.specialCheckPoint[1] = new Vector2(336.003f, -144.08f);
+
+
+            }
+            else
+            {
+                cpm.special = false;
+            }
+            
+            if (val == 10)
+            {
+                disparador1.SetActive(true);
+                disparador2.SetActive(true);
+            }
+            if (val == 11)
+            {
+                disparador1.SetActive(false);
+                disparador2.SetActive(false);
+            }
         }
-        GameObject.Find("Main Camera").GetComponent<CameraController>().ChangePos(val);
+        if (GameObject.Find("Main Camera").activeInHierarchy) GameObject.Find("Main Camera").GetComponent<CameraController>().ChangePos(val);
+        else if (GameObject.Find("SecondaryCamera").activeInHierarchy) GameObject.Find("SecondaryCamera").GetComponent<CameraController>().ChangePos(val);
+        else if (GameObject.Find("ThirdCamera").activeInHierarchy) GameObject.Find("ThirdCamera").GetComponent<CameraController>().ChangePos(val);
     }
 }

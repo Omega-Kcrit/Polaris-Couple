@@ -13,6 +13,8 @@ public class IBSOnAir : ImanBState
     public IBSOnAir(ImanBController ibc)
     {
         ibc.rb2D.isKinematic = false;
+        ibc.rb2D.mass = 1;
+        ibc.rb2D.gravityScale = 2;
         //pc.ator.SetBool("Ground", false);
     }
 
@@ -44,6 +46,9 @@ public class IBSOnAir : ImanBState
         else
         {
             ibc.rb2D.mass = ibc.massInPendulo;
+            float clampedSpeedX = Mathf.Clamp(ibc.rb2D.velocity.x, -ibc.speedMaxPendulo, ibc.speedMaxPendulo);
+            float clampedSpeedY = Mathf.Clamp(ibc.rb2D.velocity.y, -ibc.speedMaxPendulo, ibc.speedMaxPendulo);
+            ibc.rb2D.velocity = new Vector2(clampedSpeedX, clampedSpeedY);
         }
 
     }
@@ -53,7 +58,7 @@ public class IBSOnAir : ImanBState
         //inputX = Input.GetAxis("Horizontal") * ibc.playerModel.horizontalForce * ibc.playerModel.jumpSpeedFactor;
         inputX = Input.GetAxis("J_MainHorizontal") * ibc.playerModel.horizontalForce * ibc.playerModel.jumpSpeedFactor;
         if (Input.GetButton("Horizontal")) inputX = Input.GetAxis("Horizontal") * ibc.playerModel.horizontalForce;
-
+        ibc.OnAir = true;
         //jump = Input.GetButtonDown("Jump") || InputManager.AButton();
 
         if (ibc.rb2D.velocity.x > 0)

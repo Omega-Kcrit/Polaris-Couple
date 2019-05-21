@@ -20,9 +20,20 @@ public class IBSNeutro : ImanBState
 
     public override void FixedUpdate(ImanBController ibc)
     {
+        float calmpedSpeed = Mathf.Clamp(ibc.rb2D.velocity.x, -ibc.playerModel.speedMaxInNeutro, ibc.playerModel.speedMaxInNeutro);
+        ibc.rb2D.velocity = new Vector2(calmpedSpeed, ibc.rb2D.velocity.y);
     }
 
     public override void Update(ImanBController ibc)
     {
+
+        if (ibc.rb2D.velocity.y > 0)
+        {
+            ibc.OnAir = true;
+        }
+        else
+        {
+            ibc.OnAir = false;
+        }
     }
 }

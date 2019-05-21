@@ -21,7 +21,8 @@ public class IASGrounded : ImanAState
         cooldownCounter = cooldownCounterStart;
         //pc.ator.SetBool("Ground", true);
         iac.InControllA = true;
-        
+        iac.rb2D.gravityScale = 2;
+        iac.rb2D.mass = 1;
     }
 
     public override void CheckTransition(ImanAController iac)
@@ -31,6 +32,13 @@ public class IASGrounded : ImanAState
         //El problema de esta función es que reserva dinámicamente un array
         //de Collider2D[] cada vez que se la llama, y eso ocupa ciclos de CPU.
         //Una función análoga y más eficiente sería OverlapCircleAllNoAlloc
+        Collider2D colMagnetsInWorld = Physics2D.OverlapCircle(iac.groundPoint.position, iac.playerModel.groundRadius, iac.magnetInWorldLayer.value);
+        if (colMagnetsInWorld)
+        {
+            iac.ChangeState(new IASFloatingByEffector(iac));
+            Debug.Log("Entering Floating by effector");
+        }
+
         Collider2D[] col = Physics2D.OverlapCircleAll(iac.groundPoint.position, iac.playerModel.groundRadius, iac.groundLayer.value + iac.ladderLayer.value);
         if (col.Length==0)
         {
@@ -79,9 +87,10 @@ public class IASGrounded : ImanAState
             if (jump)
             {
                 iac.rb2D.AddForce(Vector2.up * iac.playerModel.jumpImpulse, ForceMode2D.Impulse);
-            }            
+            }
             cooldownCounter = cooldownCounterStart;
             coolingdown = true;
+
         }
         else
         {
@@ -107,7 +116,7 @@ public class IASGrounded : ImanAState
         jump = InputManager.AButton() || Input.GetButton("Jump");
 
         //pc.ator.SetFloat("Speed", Mathf.Abs(pc.rb2D.velocity.x));
-
+        iac.OnAir = false;
         if (iac.rb2D.velocity.x > 0)
             iac.spr.flipX = false;
         if (iac.rb2D.velocity.x < 0)

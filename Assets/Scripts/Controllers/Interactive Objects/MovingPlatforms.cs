@@ -7,13 +7,14 @@ public class MovingPlatforms : MonoBehaviour
     float t; //valor arbitrario que nos servirá para que se mueva la plataforma a través del tiempo
     public bool isVertical;
     [HideInInspector]public bool keepMoving = true;
+    public float speed = 1f;
 
-    public Rigidbody2D rb2d;
+    //public Rigidbody2D rb2d;
 
     // Use this for initialization
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        //rb2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -25,9 +26,8 @@ public class MovingPlatforms : MonoBehaviour
         {
             if (isVertical)
             {
-                //transform.position = new Vector2(transform.position.x, transform.position.y + Time.fixedDeltaTime);
-                rb2d.AddForce(new Vector2(0, 10000f * Time.fixedDeltaTime), ForceMode2D.Force);
-
+                transform.position = new Vector2(transform.position.x, transform.position.y + Time.fixedDeltaTime * speed);
+                //rb2d.AddForce(new Vector2(0, 10000f * Time.fixedDeltaTime), ForceMode2D.Force);
             }
             else
             {
@@ -44,7 +44,8 @@ public class MovingPlatforms : MonoBehaviour
         }
         if (collision.gameObject.tag == "MovingPlatformStopper")
         {
-            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+            Debug.Log("asd");
+            keepMoving = false;
         }
     }
     void OnTriggerExit2D(Collider2D collision)

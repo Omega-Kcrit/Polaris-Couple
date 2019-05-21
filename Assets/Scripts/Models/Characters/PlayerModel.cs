@@ -11,4 +11,5 @@ public class PlayerModel : CharacterModel
     public float groundRadius;
     public float speedClimbingLadders;
     public int lastCheckpointChecked; //Se usa en el sistema de guardado
+    public float speedMaxInNeutro;
 }

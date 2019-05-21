@@ -24,9 +24,29 @@ public class Spikes : MonoBehaviour
     {
         if (collision.gameObject.tag == "ImanA" || collision.gameObject.tag == "ImanB")
         {
-            imanA.transform.position = cpm.lastCheckPoint + new Vector2(2f, 0);
-            imanB.transform.position = cpm.lastCheckPoint - new Vector2(2f, 0);
-            Debug.Log("has colisionado con el pincho");
+            imanA.imDeath = true;
+            imanB.imDeath = true;
+            //print(imanA.imDeath);
+            if (cpm/*.special*/ != null)
+            {
+                imanA.transform.position = cpm.specialCheckPoint[0];
+                imanB.transform.position = cpm.specialCheckPoint[1];
+                //imanA.imDeath = false;
+                //imanB.imDeath = false;
+
+                //print(imanA.imDeath);
+
+            }
+            else {
+                //imanA.transform.position = cpm.lastCheckPoint + new Vector2(2f, 0);
+                //imanB.transform.position = cpm.lastCheckPoint - new Vector2(2f, 0);
+                //Debug.Log("has colisionado con el pincho");
+                //imanA.imDeath = false;
+                //imanB.imDeath = false;
+                //print(imanA.imDeath);
+
+            }
+
         }
     }
 }

@@ -51,8 +51,12 @@ public class IASOnAir : ImanAState
         else
         {
             iac.rb2D.mass = iac.massInPendulo;
+            float clampedSpeedX = Mathf.Clamp(iac.rb2D.velocity.x, -iac.speedMaxPendulo, iac.speedMaxPendulo);
+            float clampedSpeedY = Mathf.Clamp(iac.rb2D.velocity.y, -iac.speedMaxPendulo, iac.speedMaxPendulo);
+            iac.rb2D.velocity = new Vector2(clampedSpeedX, clampedSpeedY);
+
         }
-        
+
 
 
     }
@@ -64,7 +68,7 @@ public class IASOnAir : ImanAState
         if (Input.GetButton("Horizontal")) inputX = Input.GetAxis("Horizontal") * iac.playerModel.horizontalForce;
 
         //jump = Input.GetButtonDown("Jump") || InputManager.AButton();
-        
+        iac.OnAir = true;
         if (iac.rb2D.velocity.x > 0)
             iac.spr.flipX = false;
         if (iac.rb2D.velocity.x < 0)

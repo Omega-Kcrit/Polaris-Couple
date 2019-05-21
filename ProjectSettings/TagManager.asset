@@ -25,6 +25,9 @@ TagManager:
   - ImanBRepulsionInt
   - ImanARepulsionArea
   - MovingPlatformStopper
+  - PlatfMov
+  - VerticalMovingPlatform1
+  - VerticalMovingPlatform2
   layers:
   - Default
   - TransparentFX

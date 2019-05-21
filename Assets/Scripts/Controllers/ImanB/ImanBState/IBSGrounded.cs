@@ -19,6 +19,8 @@ public class IBSGrounded : ImanBState
         cooldownCounter = cooldownCounterStart;
         //pc.ator.SetBool("Ground", true);
         ibc.InControllB = true;
+        ibc.rb2D.mass = 1;
+        ibc.rb2D.gravityScale = 2;
     }
 
     public override void CheckTransition(ImanBController ibc)
@@ -77,19 +79,21 @@ public class IBSGrounded : ImanBState
             if (jump)
             {
                 ibc.rb2D.AddForce(Vector2.up * ibc.playerModel.jumpImpulse, ForceMode2D.Impulse);
+                cooldownCounter = cooldownCounterStart;
+                coolingdown = true;
             }            
-            cooldownCounter = cooldownCounterStart;
-            coolingdown = true;
+            //cooldownCounter = cooldownCounterStart;
+            //coolingdown = true;
         }
         else
         {
             cooldownCounter -= Time.deltaTime;
-            {
+            
                 if (cooldownCounter <= 0)
                 {
                     coolingdown = false;
                 }
-            }
+            
         }
     }
 
@@ -107,7 +111,7 @@ public class IBSGrounded : ImanBState
         jump = InputManager.AButton() || Input.GetButton("Jump");
 
         //pc.ator.SetFloat("Speed", Mathf.Abs(pc.rb2D.velocity.x));
-
+        ibc.OnAir = false;
         if (ibc.rb2D.velocity.x > 0)
             ibc.spr.flipX = false;
         if (ibc.rb2D.velocity.x < 0)

@@ -70,4 +70,9 @@ public static class InputManager
         return Input.GetButtonDown("PauseButton");
     }
 
+    public static bool ResetButton()
+    {
+        return Input.GetButtonDown("ResetButton");
+    }
+
 }

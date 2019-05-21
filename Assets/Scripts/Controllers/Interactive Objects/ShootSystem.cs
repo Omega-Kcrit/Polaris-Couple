@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class ShootSystem : MonoBehaviour
 {
-    public Vector3 posDis;//Posicion editabel de donde quiere que spawne el clavo
+    public Vector3 distanceFromTurret = new Vector3(0, -3f, 0);
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private float shootingFreq = 2f;
 
-    public GameObject Prefa;
     // Start is called before the first frame update
     void Start()
     {
-        
-        Invoke("Shoot", 2);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Invoke("Shoot", shootingFreq);
+        InvokeRepeating("Shoot", 3, shootingFreq);
     }
 
     public void Shoot()
     {
-       GameObject disparo= Instantiate(Prefa, transform.position+posDis, Quaternion.identity);
-        Invoke("Shoot", 2);
+       GameObject disparo = Instantiate(bullet, this.transform.position + distanceFromTurret, Quaternion.identity);
     }
-
-
 }

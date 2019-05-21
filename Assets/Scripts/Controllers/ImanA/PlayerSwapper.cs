@@ -7,6 +7,11 @@ public class PlayerSwapper : MonoBehaviour
 
     public GameObject[] ballArray;
 
+
+    private ImanAController imanA;
+    private ImanBController imanB;
+    [HideInInspector] public CheckPointMaster cpm;
+
     public GameObject currentControlledBall;
     private int ballIndex = 0;
 
@@ -15,6 +20,9 @@ public class PlayerSwapper : MonoBehaviour
     {
         ballIndex = 0;
         currentControlledBall = ballArray[ballIndex];
+        imanA = FindObjectOfType(typeof(ImanAController)) as ImanAController;
+        imanB = FindObjectOfType(typeof(ImanBController)) as ImanBController;
+        cpm = FindObjectOfType(typeof(CheckPointMaster)) as CheckPointMaster;
     }
 
     // Update is called once per frame
@@ -24,8 +32,14 @@ public class PlayerSwapper : MonoBehaviour
         {
             this.change();
         }
-        
-        
+
+        if (Input.GetKeyDown("r") || InputManager.ResetButton()){
+            imanA.transform.position = cpm.lastCheckPoint + new Vector2(2f, 0);
+            imanB.transform.position = cpm.lastCheckPoint - new Vector2(2f, 0);
+        }
+
+
+
     }
 
     public void change()
