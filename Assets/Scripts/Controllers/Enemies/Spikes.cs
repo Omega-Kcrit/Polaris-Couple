@@ -27,20 +27,31 @@ public class Spikes : MonoBehaviour
             imanA.imDeath = true;
             imanB.imDeath = true;
             //print(imanA.imDeath);
-            if (cpm/*.special*/ != null)
+            //if (cpm/*.special*/ == null)
+            //{
+            //    imanA.transform.position = cpm.specialCheckPoint[0];
+            //    imanB.transform.position = cpm.specialCheckPoint[1];
+            //    //imanA.imDeath = false;
+            //    //imanB.imDeath = false;
+
+            //    //print(imanA.imDeath);
+
+            //}
+            if (cpm.lastCheckPoint != null)
             {
-                imanA.transform.position = cpm.specialCheckPoint[0];
-                imanB.transform.position = cpm.specialCheckPoint[1];
-                //imanA.imDeath = false;
-                //imanB.imDeath = false;
-
-                //print(imanA.imDeath);
-
-            }
-            else {
-                //imanA.transform.position = cpm.lastCheckPoint + new Vector2(2f, 0);
-                //imanB.transform.position = cpm.lastCheckPoint - new Vector2(2f, 0);
-                //Debug.Log("has colisionado con el pincho");
+                if (!cpm.checkPointFor1Iman)
+                {
+                    imanA.transform.position = cpm.lastCheckPoint + new Vector2(1f, 0);
+                    imanB.transform.position = cpm.lastCheckPoint - new Vector2(1f, 0);
+                    Debug.Log("has colisionado con el pincho");
+                }
+                if (cpm.checkPointFor1Iman)
+                {
+                    print("respawn para cada uno");
+                    imanA.transform.position = cpm.lastCheckPointImanA;
+                    imanB.transform.position = cpm.lastCheckPointImanB;
+                }
+                
                 //imanA.imDeath = false;
                 //imanB.imDeath = false;
                 //print(imanA.imDeath);

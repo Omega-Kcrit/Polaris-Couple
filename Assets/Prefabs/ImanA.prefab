@@ -188,7 +188,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3dd1b0eadf716b84b984fa2e7bc02aea, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2216981, g: 0.8052811, b: 1, a: 0.63529414}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 3770215242227158381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 34.144638, y: 1.6924374, z: 0}
-  m_LocalScale: {x: 1.1803889, y: 1.1803889, z: 1.1803889}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_Children:
   - {fileID: 3770215243039954698}
   - {fileID: 3770215242701326612}
@@ -336,7 +336,7 @@ MonoBehaviour:
   magnetInWorldLayer:
     serializedVersion: 2
     m_Bits: 0
-  InControllA: 0
+  InControllA: 1
   CollidersEnable: 1
   imanBtransform: {fileID: 0}
   imanBrb2d: {fileID: 0}
@@ -345,14 +345,15 @@ MonoBehaviour:
   inRepulsion: 0
   repulsionForce: 200
   velocityInRepulsion: 1
-  repulsionForceStart: 400
+  repulsionForceStart: 425
   repulsionForceInCharm: 400
-  maxVelocityInRepulsion: 11
-  maxVelocityInImpulse: 13
+  maxVelocityInRepulsion: 12
+  maxVelocityInImpulse: 15
   switchMaxRepulsion: 0
   inNormalRepulsion: 0
   maxNoramlVelocityInRepulsion: 4
   normalRepulsionForce: 175
+  normalForceGlboal: 0.8
   speedMaxInCharm: 5
   forceCharm: 50
   coolingdownSkill1: 0
@@ -370,6 +371,7 @@ MonoBehaviour:
   PosPropulsio: {x: 0.01, y: 0.4, z: 0}
   time: 0.2
   OnAir: 0
+  imDeath: 0
   Luz: {fileID: 1709509190}
 --- !u!114 &3770215242227158391
 MonoBehaviour:

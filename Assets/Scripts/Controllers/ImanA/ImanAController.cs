@@ -306,7 +306,7 @@ public class ImanAController : MonoBehaviour
             if (!inRepulsion)
             {
                 imanBrb2d.gravityScale = 0;
-                imanBrb2d.AddForce(distanceImanB.normalized * forceCharm , ForceMode2D.Force);
+                imanBrb2d.AddForce(distanceImanB.normalized * forceCharm , ForceMode2D.Force);                
 
                 float clampedSpeedX = Mathf.Clamp(imanBrb2d.velocity.x, -speedMaxInCharm * normalForceGlboal, speedMaxInCharm * normalForceGlboal);
                 float clampedSpeedY = Mathf.Clamp(imanBrb2d.velocity.y, -speedMaxInCharm * normalForceGlboal, speedMaxInCharm * normalForceGlboal);

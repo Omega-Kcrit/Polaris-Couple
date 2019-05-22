@@ -13,13 +13,17 @@ public class DoorSystem : MonoBehaviour
 
     [SerializeField] private GameObject door;
 
+    public GameObject Mov_part;
+    private Vector3 Mov_ini;
+
     //Animaciones
-    public Animator animator;
+    //public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+      //  animator = GetComponent<Animator>();
+        Mov_ini = Mov_part.transform.position;
         //door = this.gameObject;
     }
 
@@ -71,14 +75,17 @@ public class DoorSystem : MonoBehaviour
         //if (canOpenDoor && !openDownwards && !staticAppearance) this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10f * Time.fixedDeltaTime * 100f), ForceMode2D.Force);
         //else if (canOpenDoor && openDownwards && !staticAppearance) this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -(10f * Time.fixedDeltaTime * 100f)), ForceMode2D.Force);
         if (canOpenDoor && staticAppearance && door != null) door.SetActive(true);
-        if (canOpenDoor && animator != null)
-        {
-            animator.SetBool("IsOpen", canOpenDoor);
-        }
-        else if (animator != null)
+        if (canOpenDoor )
         {
 
-            animator.SetBool("IsOpen", canOpenDoor);
+            Vector3 ajuste = new Vector3( Mov_ini.x , GetComponent<SpriteRenderer>().bounds.size.y+Mov_ini.y, Mov_ini.z);
+            Mov_part.transform.position = Vector3.MoveTowards(Mov_part.transform.position,ajuste,0.12f); 
+            //animator.SetBool("IsOpen", canOpenDoor);
+        }
+        else 
+        {
+            Mov_part.transform.position = Vector3.MoveTowards(Mov_part.transform.position, Mov_ini, 0.12f);
+          //  animator.SetBool("IsOpen", canOpenDoor);
         }
     }
 }

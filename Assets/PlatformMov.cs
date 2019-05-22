@@ -31,6 +31,8 @@ public class PlatformMov : MonoBehaviour
     private float cd = 20f;
     private bool setCd = false;
 
+    private bool bossActivated = false;
+
     void Start()
     {
         //startingPos = this.transform.position;
@@ -60,7 +62,7 @@ public class PlatformMov : MonoBehaviour
                 Move(false);
             }
         }
-        else
+        else if (bossActivated)
         {
             Move(true);
         }
@@ -162,5 +164,19 @@ public class PlatformMov : MonoBehaviour
     private void ToRespawn()
     {
         this.transform.position = posA;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "ImanA" || collision.gameObject.tag == "ImanB") bossActivated = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "ImanA" || collision.gameObject.tag == "ImanB")
+        {
+            bossActivated = false;
+            this.transform.position = new Vector3(136.78f, -45.25f, 0);
+        }
     }
 }

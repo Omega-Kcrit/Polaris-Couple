@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3dd1b0eadf716b84b984fa2e7bc02aea, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.40784314}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -482,6 +482,7 @@ MonoBehaviour:
   inNormalRepulsion: 0
   maxNoramlVelocityInRepulsion: 4
   normalRepulsionForce: 175
+  normalForceGlboal: 1
   speedMaxInCharm: 5
   forceCharm: 50
   coolingdownSkill1: 1
@@ -497,6 +498,7 @@ MonoBehaviour:
   time: 0.2
   OnAir: 0
   Luz: {fileID: 1631891848}
+  imDeath: 0
 --- !u!232 &7780776325523641016
 DistanceJoint2D:
   m_ObjectHideFlags: 0

@@ -28,6 +28,7 @@ TagManager:
   - PlatfMov
   - VerticalMovingPlatform1
   - VerticalMovingPlatform2
+  - BossPlatform
   layers:
   - Default
   - TransparentFX
@@ -41,8 +42,8 @@ TagManager:
   - 
   - Player
   - MagnetWorldObject
-  - 
-  - 
+  - ImanA
+  - ImanB
   - 
   - 
   - 

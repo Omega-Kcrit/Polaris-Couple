@@ -46,22 +46,60 @@ public class Pendulum : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //MovmentInJoint();
+
+        //if (Iman != null)
+        //{
+        //    if (Input.GetKey("q") || InputManager.YButtonGetKey())
+        //    {
+        //        Iman.GetComponent<Rigidbody2D>().transform.position = this.transform.position - /*new Vector3(0, 1.3f, 0);*/ new Vector3(0, Iman.GetComponent<SpriteRenderer>().bounds.extents.y , 0);
+                    
+        //            //.sprite.bounds.extents.y,0);
+        //            //GetComponent<Sprite>().associatedAlphaSplitTexture.height/2,0);
+        //            /*new Vector3 (0,Iman.GetComponent<Rigidbody2D>().centerOfMass.y/2,0)*/
+        //            /*new Vector3(0,this.gameObject.GetComponent<CircleCollider2D>().radius,*//*0)*/ /*new Vector3(0, (Iman.GetComponent<CapsuleCollider2D>().size.y / 10), 0)*/;
+
+        //        Iman.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
+                
+        //        anclajeJoint.enabled = true;
+        //        this.anclajeJoint.distance = startDistance;
+
+        //        //anclajeSpringJoint.enabled = true;
+        //    }
+        //    else
+        //    {
+        //        print("outPnedul");
+        //        Iman.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;            
+        //        anclajeJoint.enabled = false;
+        //        //anclajeSpringJoint.enabled = false;
+        //        Iman = null;
+        //        print("desinmatizado");
+        //        imantizado = false;
+        //    }
+        //}
+      
+
+    }
+    void FixedUpdate()
+    {
         MovmentInJoint();
 
         if (Iman != null)
         {
             if (Input.GetKey("q") || InputManager.YButtonGetKey())
             {
-                Iman.GetComponent<Rigidbody2D>().transform.position = this.transform.position - /*new Vector3(0, 1.3f, 0);*/ new Vector3(0, Iman.GetComponent<SpriteRenderer>().bounds.extents.y , 0);
-                    
-                    //.sprite.bounds.extents.y,0);
-                    //GetComponent<Sprite>().associatedAlphaSplitTexture.height/2,0);
-                    /*new Vector3 (0,Iman.GetComponent<Rigidbody2D>().centerOfMass.y/2,0)*/
-                    /*new Vector3(0,this.gameObject.GetComponent<CircleCollider2D>().radius,*//*0)*/ /*new Vector3(0, (Iman.GetComponent<CapsuleCollider2D>().size.y / 10), 0)*/;
+                Iman.GetComponent<Rigidbody2D>().transform.position = this.transform.position - /*new Vector3(0, 1.3f, 0);*/ new Vector3(0, Iman.GetComponent<SpriteRenderer>().bounds.extents.y, 0);
+
+                //.sprite.bounds.extents.y,0);
+                //GetComponent<Sprite>().associatedAlphaSplitTexture.height/2,0);
+                /*new Vector3 (0,Iman.GetComponent<Rigidbody2D>().centerOfMass.y/2,0)*/
+                /*new Vector3(0,this.gameObject.GetComponent<CircleCollider2D>().radius,*//*0)*/ /*new Vector3(0, (Iman.GetComponent<CapsuleCollider2D>().size.y / 10), 0)*/
+                ;
 
                 Iman.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
-                
+
                 anclajeJoint.enabled = true;
                 this.anclajeJoint.distance = startDistance;
 
@@ -70,7 +108,7 @@ public class Pendulum : MonoBehaviour
             else
             {
                 print("outPnedul");
-                Iman.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;            
+                Iman.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 anclajeJoint.enabled = false;
                 //anclajeSpringJoint.enabled = false;
                 Iman = null;
@@ -78,7 +116,6 @@ public class Pendulum : MonoBehaviour
                 imantizado = false;
             }
         }
-      
 
     }
 
@@ -128,7 +165,7 @@ public class Pendulum : MonoBehaviour
                     
                     ballBControll.GetComponent<ImanBController>().inPendulo = true;
                 }
-                if (!imantizado)
+                if (!imantizado && coll.GetComponent<ImanAController>().InControllA)
                 {
                     print("Cambio hecho");
                     imantizado = true;
@@ -170,7 +207,7 @@ public class Pendulum : MonoBehaviour
                     
                     ballAControll.GetComponent<ImanAController>().inPendulo = true;
                 }
-                if (!imantizado)
+                if (!imantizado && coll.GetComponent<ImanBController>().InControllB)
                 {
                     print("Cambio hecho");
                     imantizado = true;
